@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+   <body>
+
+       <div id="login-ariae">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="pin-generator half-width">
+                        <input placeholder="Press The Button" id="pin-code" class="form-control" type="text">
+                        <button id="generate-pin" class="generate-btn">Generate Pin</button>
+                    </div>
+                </div>
+                    <div class="col-md-6">
+                        <div class="input-section half-width">
+                            <form id="number">
+                                <input placeholder="Enter Your Code" id="code" class="form-control" type="text">
+                                <div class="numbers">
+                                    <div class="calc-body">
+                                        <div class="calc-button-row">
+                                            <div onclick="number.code.value +='7'" class="button">7</div>
+                                            <div onclick="number.code.value +='8'" class="button">8</div>
+                                            <div onclick="number.code.value +='9'" class="button">9</div>
+                                        </div>
+                                        <div class="calc-button-row">
+                                            <div onclick="number.code.value +='4'" class="button">4</div>
+                                            <div onclick="number.code.value +='5'" class="button">5</div>
+                                            <div onclick="number.code.value +='6'" class="button">6</div>
+                                        </div>
+                                        <div class="calc-button-row">
+                                            <div onclick="number.code.value +='1'" class="button">1</div>
+                                            <div onclick="number.code.value +='2'" class="button">2</div>
+                                            <div onclick="number.code.value +='3'" class="button">3</div>
+                                        </div>
+                                        <div class="calc-button-row">
+                                            <div onclick="number.code.value = number.code.value.substr(0,number.code.value.length-1)" class="button"><</div>
+                                            <div onclick="number.code.value +='0'" class="button">0</div>
+                                            <div  onclick="number.code.value =''"  class="button">C</div>
+                                        </div>
+                                        <div>
+                                            <button id="submit-btn" type="button" class="submit-btn">Submit</button>
+                                            <p class="action-left">3 try left</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                         </div>
+                    </div>
+            <div  class="notify-section">
+                <p id="incorrect" class="notify ">❌ Pin Didn't Match, Please try again</p>
+               <div id="correct"> 
+                   <p class="notify ">✅ Pin Matched... Secret door is opening for you</p>
+                   <button id="correcte" type="button" class="submit-btn">Open</button>
+                </div>
+             </div>
+        </div>
+        </div>
+
+
+       </div> 
+
+        <!-- =>>phone-aria<<= -->
+
+        <div id="new-page" class="backgroun-cplor">
+            
+            <section>
+                <div class="container">
+                   <div class="cart">
+                      <div class="col-md-12 col-lg-10 mx-auto">
+                         <div class="cart-item">
+                            <div class="row">
+                               <div class="col-md-7 center-item">
+                                  <img src="images/product-1.png" alt="">
+                                  <h5>iPhone 11 128GB Black</h5>
+                               </div>
+          
+                               <div class="col-md-5 center-item">
+                                  <div class="input-group number-spinner">
+                                     <button onclick="handleProductChange('phone', false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                                     <input id="phone-count" type="text" class="form-control text-center" value="1">
+                                     <button onclick="handleProductChange('phone', true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                                  </div>
+                                  <h5 id="phone-prize">$1219</h5>
+                                  <img src="images/remove.png" alt="" class="remove-item">
+                               </div>
+                            </div>
+                         </div>
+          
+                         <div class="cart-item">
+                            <div class="row">
+                               <div class="col-md-7 center-item mx-auto">
+                                  <img src="images/product-2.png" alt="">
+                                  <h5>iPhone 11 Silicone Case - Black</h5>
+                               </div>
+                               <div class="col-md-5 center-item">
+                                  <div class="input-group number-spinner">
+                                     <button onclick="handleProductChange('case', false)" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                                     <input id="case-count" type="text" class="form-control text-center" value="1">
+                                     <button   onclick="handleProductChange('case', true)" class="btn btn-default"><i class="fas fa-plus"></i></button>
+          
+                                  </div>
+                                  <h5 id="case-prize">$59</h5>
+                                  <img src="images/remove.png" alt="" class="remove-item">
+                               </div>
+                            </div>
+                         </div>
+          
+                         <div class="cart-item">
+                            <div class="row">
+          
+                               <div class="col-md-8">
+                                  <h5>Subtotal: </h5>
+                                  <h5>Tax:</h5>
+                                  <h5>Total:</h5>
+                               </div>
+          
+                               <div class="col-md-4 status">
+                                  <h5 id="subtotal-prize">$1,278</h5>
+                                  <h5 id="tax-amount">$0</h5>
+                                  <h5 id="total-amount">$1,278</h5>
+                               </div>
+                            </div>
+                         </div>
+                         <div class="col-md-12 pt-4 pb-4">
+                            <button id="check-out" type="button" class="btn btn-success check-out">Check Out</button>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </section>
+        </div>
+
+        <div class="text-center" id="thank-you">
+           <h2 id="thank">Thank You For your Purchase</h3>
+        </div>
+    
+    <script>
+                // =>pin number aria<=
+
+        document.getElementById('generate-pin').addEventListener('click', function() {
+        const hiddenInput = document.getElementById('pin-code');
+        const hiddenNumber = parseInt(hiddenInput.value);
+        const hiddenNumber1 = Math.floor(1000 + Math.random() * 9000);
+        const hiddenNumber2 =Math.round(hiddenNumber1);
+        hiddenInput.value = hiddenNumber2;
+        })
+
+                // submit area
+
+        document.getElementById('submit-btn').addEventListener('click',function(){
+         const firstInput = document.getElementById('pin-code');
+         const firstCode = parseInt(firstInput.value);
+         const secondInput = document.getElementById('code');
+         const secondCode = parseInt(secondInput.value);
+         if(firstCode==secondCode){
+           document.getElementById('correct').style.display = 'block';
+       }
+       else{
+           document.getElementById('incorrect').style.display = 'block';
+       }
+
+        })
+                // ==>>open phone aria<<==document
+
+        document.getElementById('correcte').addEventListener('click', function(){
+            document.getElementById('login-ariae').style.display='none';
+            document.getElementById('new-page').style.display='block';
+            })
+
+
+
+        // =>>phone-aria<<=
+
+        function handleProductChange(product, isIncrease){
+         const productInput = document.getElementById(product + '-count');
+         const productCount = parseInt(productInput.value);
+         // const caseAdd = caseCount - 1;
+         let productAdd =  productCount;
+         if(isIncrease == true){
+            productAdd =  productCount + 1;
+         }
+         if(isIncrease == false &&  productAdd > 0){
+            productAdd =  productCount - 1;
+         }
+         productInput.value =  productAdd;
+         // const  productPrize =  productAdd * 59;
+         let productPrize = 0;
+         if(product == 'phone'){
+            productPrize =productAdd * 1219
+         }
+         if(product == 'case'){
+            productPrize = productAdd * 59
+         }
+         document.getElementById( product + '-prize').innerText = '$' + productPrize;
+         handleSubtotal();
+      }
+
+      // =>>subtotal aria<<=
+
+      function handleSubtotal (){
+         const phonePrize = handleProduct('phone');
+
+         const casePrize = handleProduct('case');
+
+         const subtotal = phonePrize * 1219 + casePrize * 59;
+         document.getElementById('subtotal-prize').innerText ='$' + subtotal;
+
+         const tax = Math.round(subtotal * 0.1);
+         document.getElementById('tax-amount').innerText = '$' + tax;
+
+         const total = subtotal + tax;
+         document.getElementById('total-amount').innerText = '$' + total            
+      }
+
+            function handleProduct(product){
+               const productInput = document.getElementById(product + '-count');
+               const productPrize = parseInt(productInput.value);
+               return productPrize
+
+            }
+
+
+            document.getElementById('check-out').addEventListener('click', function(){
+            document.getElementById('new-page').style.display='none';
+            document.getElementById('thank-you').style.display='block';
+            })
+
+
+            
+        
+        
+    
+
+
+        
+
+
+        
+    </script>
+
+
+</body>
+</html>
